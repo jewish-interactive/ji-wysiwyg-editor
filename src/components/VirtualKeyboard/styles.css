@@ -1,0 +1,41 @@
+.ji-keyboard-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 120px;
+  width: 500px;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid #f1f1f1;
+}
+.ji-keyboard-row {
+  display: flex;
+}
+.ji-hebrew-char {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  border: 1px solid #f1f1f1;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 2px;
+}
+.ji-hebrew-char:hover {
+  box-shadow: 1px 1px 0px #bfbdbd;
+}
+.ji-hebrew-char:active {
+  box-shadow: 1px 1px 0px #bfbdbd inset;
+}
+.ji-cross-btn {
+  position: absolute;
+  right: -15px;
+  top: -12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.ji-cross-btn:focus {
+  outline: none;
+}

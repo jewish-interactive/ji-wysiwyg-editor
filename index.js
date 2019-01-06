@@ -1,1 +1,1 @@
-export { default as Editor } from "./src/components/Editor";
+export { default as JiEditor } from "./src/components/Editor";

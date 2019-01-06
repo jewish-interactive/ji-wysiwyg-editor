@@ -6,4 +6,8 @@
   border: 1px solid #f1f1f1;
   padding: 5px;
   border-radius: 2px;
+  height: 86%;
+}
+.ji-editor-wrapper {
+  position: relative;
 }
