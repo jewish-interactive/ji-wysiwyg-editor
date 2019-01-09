@@ -21,13 +21,6 @@
   },
   "homepage": "https://github.com/jewish-interactive/ji-wysiwyg-editor#readme",
   "dependencies": {
-    "css-loader": "^2.1.0",
-    "draft-js": "^0.10.5",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "precss": "^4.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
     "react-draft-wysiwyg": "^1.12.19"
   },
   "devDependencies": {
@@ -37,6 +30,13 @@
     "@storybook/addons": "^4.1.4",
     "@storybook/react": "^4.1.4",
     "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "draft-js": "^0.10.5",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "precss": "^4.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1"

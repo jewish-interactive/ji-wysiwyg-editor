@@ -15,7 +15,8 @@ module.exports = {
   },
   externals: {
     react: "react",
-    "react-dom": "react-dom"
+    "react-dom": "react-dom",
+    "draft-js": "draft-js"
   },
   plugins: [
     new webpack.DefinePlugin({
