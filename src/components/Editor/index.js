@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
+import htmlToDraft from "html-to-draftjs";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
@@ -31,6 +32,7 @@ export default class JiEditor extends Component {
 
   updateEditorState = editorState => {
     this.setState({ editorState });
+    this.props.onChange(htmlToDraft(convertToRaw(editorState)));
   };
 
   toggleVirtualKeyboard = () => {
@@ -65,5 +67,6 @@ export default class JiEditor extends Component {
 }
 
 JiEditor.proptypes = {
-  defaultValue: PropTypes.any
+  defaultValue: PropTypes.any,
+  onChange: PropTypes.func
 };

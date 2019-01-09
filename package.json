@@ -1,6 +1,6 @@
 {
   "name": "ji-wysiwyg-editor",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "JI Wysiwyg Editor",
   "main": "dist/ji-wysiwyg-editor.js",
   "scripts": {
@@ -22,6 +22,8 @@
   "homepage": "https://github.com/jewish-interactive/ji-wysiwyg-editor#readme",
   "dependencies": {
     "draftjs-to-html": "^0.8.4",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-to-draftjs": "^1.4.0",
     "react-draft-wysiwyg": "^1.12.19"
   },
   "devDependencies": {
@@ -33,7 +35,6 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "draft-js": "^0.10.5",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "precss": "^4.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
