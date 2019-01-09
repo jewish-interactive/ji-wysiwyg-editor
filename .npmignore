@@ -10,3 +10,4 @@ stories
 .npmignore
 package-lock.json
 yarn.lock
+index.js

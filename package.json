@@ -1,8 +1,8 @@
 {
   "name": "ji-wysiwyg-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JI Wysiwyg Editor",
-  "main": "index.js",
+  "main": "dist/ji-wysiwyg-editor.js",
   "scripts": {
     "build": "npm run clean && npm run build:webpack",
     "build-storybook": "build-storybook",
