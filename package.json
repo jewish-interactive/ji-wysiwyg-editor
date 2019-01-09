@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jewish-interactive/ji-wysiwyg-editor#readme",
   "dependencies": {
+    "draftjs-to-html": "^0.8.4",
     "react-draft-wysiwyg": "^1.12.19"
   },
   "devDependencies": {
