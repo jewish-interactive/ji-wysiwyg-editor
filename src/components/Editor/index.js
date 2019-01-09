@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 
@@ -16,7 +17,17 @@ const TOOLBAR_CONFIG = {
 };
 
 export default class JiEditor extends Component {
-  state = { virtualKeyboard: false, editorState: EditorState.createEmpty() };
+  getInitialState = () => {
+    const { defaultValue } = this.props;
+    if (!defaultValue) return EditorState.createEmpty();
+    const contentState =
+      typeof defaultValue !== "string"
+        ? convertFromRaw(defaultValue)
+        : convertFromHtml(defaultValue);
+    return EditorState.createWithContent(contentState);
+  };
+
+  state = { virtualKeyboard: false, editorState: this.getInitialState() };
 
   updateEditorState = editorState => {
     this.setState({ editorState });
@@ -52,3 +63,7 @@ export default class JiEditor extends Component {
     );
   }
 }
+
+JiEditor.proptypes = {
+  defaultValue: PropTypes.any
+};

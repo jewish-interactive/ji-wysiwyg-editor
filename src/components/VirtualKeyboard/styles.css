@@ -9,6 +9,7 @@
 }
 .ji-keyboard-row {
   display: flex;
+  justify-content: center;
 }
 .ji-hebrew-char {
   width: 32px;

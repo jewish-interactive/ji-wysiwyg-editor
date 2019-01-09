@@ -4,8 +4,11 @@
   "description": "JI Wysiwyg Editor",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "npm run clean && npm run build:webpack",
+    "build-storybook": "build-storybook",
+    "build:webpack": "NODE_ENV=production webpack --config config/webpack.config.js",
+    "clean": "rimraf dist",
+    "storybook": "start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
@@ -18,17 +21,24 @@
   },
   "homepage": "https://github.com/jewish-interactive/ji-wysiwyg-editor#readme",
   "dependencies": {
+    "css-loader": "^2.1.0",
     "draft-js": "^0.10.5",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "precss": "^4.0.0",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-draft-wysiwyg": "^1.12.19"
   },
   "devDependencies": {
-    "@storybook/react": "^4.1.4",
+    "@babel/core": "^7.2.2",
     "@storybook/addon-actions": "^4.1.4",
     "@storybook/addon-links": "^4.1.4",
     "@storybook/addons": "^4.1.4",
-    "@babel/core": "^7.2.2",
-    "babel-loader": "^8.0.5"
+    "@storybook/react": "^4.1.4",
+    "babel-loader": "^8.0.5",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1"
   }
 }

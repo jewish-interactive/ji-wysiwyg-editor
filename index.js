@@ -1,1 +1,5 @@
-export { default as JiEditor } from "./src/components/Editor";
+import { default as JiEditor } from "./src/components/Editor";
+
+module.exports = {
+  JiEditor
+};
