@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Editor } from "react-draft-wysiwyg";
-import { EditorState, convertToRaw } from "draft-js";
-import htmlToDraft from "html-to-draftjs";
+import { EditorState, convertToRaw, convertFromRaw } from "draft-js";
+import draftToHtml from "draftjs-to-html";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
@@ -21,10 +21,7 @@ export default class JiEditor extends Component {
   getInitialState = () => {
     const { defaultValue } = this.props;
     if (!defaultValue) return EditorState.createEmpty();
-    const contentState =
-      typeof defaultValue !== "string"
-        ? convertFromRaw(defaultValue)
-        : convertFromHtml(defaultValue);
+    const contentState = convertFromRaw(defaultValue);
     return EditorState.createWithContent(contentState);
   };
 
@@ -32,7 +29,10 @@ export default class JiEditor extends Component {
 
   updateEditorState = editorState => {
     this.setState({ editorState });
-    this.props.onChange(htmlToDraft(convertToRaw(editorState)));
+    const raw = convertToRaw(editorState.getCurrentContent());
+    const html = draftToHtml(raw);
+
+    this.props.onChange({ raw, html });
   };
 
   toggleVirtualKeyboard = () => {
