@@ -14,7 +14,10 @@ class DemoEditor extends PureComponent {
     const { editorContent } = this.state;
     return (
       <React.Fragment>
-        <JiEditor onChange={this.updateEditorContent} />
+        <JiEditor
+          defaultValue={"<p>testing</p>"}
+          onChange={this.updateEditorContent}
+        />
         <pre>{JSON.stringify(editorContent.raw, undefined, 4)}</pre>
         <pre>{editorContent.html}</pre>
       </React.Fragment>

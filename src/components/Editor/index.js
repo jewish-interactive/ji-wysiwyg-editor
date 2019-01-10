@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Editor } from "react-draft-wysiwyg";
-import { EditorState, convertToRaw, convertFromRaw } from "draft-js";
+import {
+  EditorState,
+  convertToRaw,
+  convertFromRaw,
+  ContentState
+} from "draft-js";
 import draftToHtml from "draftjs-to-html";
+import htmlToDraft from "html-to-draftjs";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
@@ -17,11 +23,20 @@ const TOOLBAR_CONFIG = {
   }
 };
 
+const convertFromHtml = html => {
+  const blocksFromHTML = htmlToDraft(html);
+  const { contentBlocks, entityMap } = blocksFromHTML;
+  return ContentState.createFromBlockArray(contentBlocks, entityMap);
+};
+
 export default class JiEditor extends Component {
   getInitialState = () => {
     const { defaultValue } = this.props;
     if (!defaultValue) return EditorState.createEmpty();
-    const contentState = convertFromRaw(defaultValue);
+    const contentState =
+      typeof defaultValue !== "string"
+        ? convertFromRaw(defaultValue)
+        : convertFromHtml(defaultValue);
     return EditorState.createWithContent(contentState);
   };
 
@@ -31,7 +46,6 @@ export default class JiEditor extends Component {
     this.setState({ editorState });
     const raw = convertToRaw(editorState.getCurrentContent());
     const html = draftToHtml(raw);
-
     this.props.onChange({ raw, html });
   };
 
