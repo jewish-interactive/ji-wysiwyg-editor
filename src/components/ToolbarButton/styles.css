@@ -1,5 +1,4 @@
-.ji-keyboard-btn-wrapper {
-  height: 32px;
+.ji-toolbar-btn-wrapper {
   padding: 5px;
   margin-right: 5px;
   border: 1px solid #f1f1f1;
@@ -10,9 +9,9 @@
   cursor: pointer;
   margin-bottom: 5px;
 }
-.ji-keyboard-btn-wrapper:hover {
+.ji-toolbar-btn-wrapper:hover {
   box-shadow: 1px 1px 0px #bfbdbd;
 }
-.ji-keyboard-btn-wrapper:active {
+.ji-toolbar-btn-wrapper:active {
   box-shadow: 1px 1px 0px #bfbdbd inset;
 }

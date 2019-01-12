@@ -1,9 +1,8 @@
 import React from "react";
 import { Keyboard } from "../../icons";
-import "./styles.css";
 
 const KeyboardButton = ({ onClick }) => (
-  <button className="ji-keyboard-btn-wrapper" onClick={onClick}>
+  <button className="ji-toolbar-btn-wrapper" onClick={onClick}>
     <Keyboard />
   </button>
 );

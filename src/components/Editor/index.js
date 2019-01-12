@@ -12,7 +12,7 @@ import htmlToDraft from "html-to-draftjs";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-import KeyboardButton from "../KeyboardButton";
+import { KeyboardButton, SefariaButton } from "../ToolbarButton";
 import VirtualKeyboard from "../VirtualKeyboard";
 import "./styles.css";
 
@@ -65,7 +65,8 @@ export default class JiEditor extends Component {
           toolbar={TOOLBAR_CONFIG}
           wrapperClassName="ji-wrapper"
           toolbarCustomButtons={[
-            <KeyboardButton onClick={this.toggleVirtualKeyboard} />
+            <KeyboardButton onClick={this.toggleVirtualKeyboard} />,
+            <SefariaButton />
           ]}
         />
         {virtualKeyboard && (
