@@ -5675,9 +5675,9 @@ react-dom@^16.6.3, react-dom@^16.7.0:
     prop-types "^15.6.2"
     scheduler "^0.12.0"
 
-react-draft-wysiwyg@^1.12.19:
-  version "1.12.19"
-  resolved "https://registry.yarnpkg.com/react-draft-wysiwyg/-/react-draft-wysiwyg-1.12.19.tgz#9aa462726e2aa6e3e42736054280b1ad8691836c"
+react-draft-wysiwyg@^1.12.20:
+  version "1.12.20"
+  resolved "https://registry.yarnpkg.com/react-draft-wysiwyg/-/react-draft-wysiwyg-1.12.20.tgz#2db7670cad13bbb24353e75b20bd966612ed47cb"
   dependencies:
     classnames "^2.2.5"
     draftjs-utils "^0.9.3"
