@@ -20,6 +20,9 @@ const TOOLBAR_CONFIG = {
   options: ["inline", "textAlign", "colorPicker", "fontFamily", "fontSize"],
   inline: {
     options: ["bold", "italic", "underline"]
+  },
+  fontFamily: {
+    options: ["Assistant", "Varela Round", "David Libre", "Frank Ruhl Libre"]
   }
 };
 
@@ -64,6 +67,7 @@ export default class JiEditor extends Component {
           onEditorStateChange={this.updateEditorState}
           toolbar={TOOLBAR_CONFIG}
           wrapperClassName="ji-wrapper"
+          toolbarClassName="ji-editor-toolbar"
           toolbarCustomButtons={[
             <KeyboardButton onClick={this.toggleVirtualKeyboard} />,
             <SefariaButton />
