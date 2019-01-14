@@ -1,6 +1,6 @@
 {
   "name": "ji-wysiwyg-editor",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "JI Wysiwyg Editor",
   "main": "dist/ji-wysiwyg-editor.js",
   "scripts": {
