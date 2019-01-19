@@ -17,6 +17,12 @@ class DemoEditor extends PureComponent {
         <JiEditor
           defaultValue={"<p>testing</p>"}
           onChange={this.updateEditorContent}
+          fontFamily={[
+            "Assistant",
+            "Varela Round",
+            "David Libre",
+            "Frank Ruhl Libre"
+          ]}
         />
         <pre>{JSON.stringify(editorContent.raw, undefined, 4)}</pre>
         <pre>{editorContent.html}</pre>

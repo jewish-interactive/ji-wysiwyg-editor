@@ -16,14 +16,14 @@ import { KeyboardButton, SefariaButton } from "../ToolbarButton";
 import VirtualKeyboard from "../VirtualKeyboard";
 import "./styles.css";
 
-const TOOLBAR_CONFIG = {
-  options: ["inline", "textAlign", "colorPicker", "fontFamily", "fontSize"],
-  inline: {
-    options: ["bold", "italic", "underline"]
-  },
-  fontFamily: {
-    options: ["Assistant", "Varela Round", "David Libre", "Frank Ruhl Libre"]
-  }
+const getToolbarConfig = fontFamily => {
+  return {
+    options: ["inline", "textAlign", "colorPicker", "fontFamily", "fontSize"],
+    inline: { options: ["bold", "italic", "underline"] },
+    fontFamily: {
+      options: fontFamily
+    }
+  };
 };
 
 const convertFromHtml = html => {
@@ -58,6 +58,7 @@ export default class JiEditor extends Component {
   };
 
   render() {
+    const { fontFamily } = this.props;
     const { virtualKeyboard, editorState } = this.state;
     return (
       <div className="ji-editor-wrapper">
@@ -65,7 +66,7 @@ export default class JiEditor extends Component {
           editorClassName="ji-editor"
           editorState={editorState}
           onEditorStateChange={this.updateEditorState}
-          toolbar={TOOLBAR_CONFIG}
+          toolbar={getToolbarConfig(fontFamily)}
           wrapperClassName="ji-wrapper"
           toolbarClassName="ji-editor-toolbar"
           toolbarCustomButtons={[
@@ -87,5 +88,6 @@ export default class JiEditor extends Component {
 
 JiEditor.proptypes = {
   defaultValue: PropTypes.any,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  fontFamily: PropTypes.array
 };
